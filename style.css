@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600");
+
+*,/*todos los elementos*/
+*::before, /*para asegurar que los elementos generados por CSS de forma dinámica también sigan estas reglas*/
+*::after {
+  box-sizing: border-box; /* sin esta regla, el ancho y alto de un elemento se calcula sin tener en cuenta el relleno y el borde*/
+  margin: 0;  /* para garantizar que no haya márgenes o rellenos no deseados aplicados de forma predeterminada por el navegador*/
+  padding: 0;
+}
+
+body, input, textarea {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 0.01fr 1fr;
+
+    /*grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "aside" "header"
+    "aside" "main"
+    "footer" "footer";*/
+    height: 100vh;
+}
+
+aside i, .contacto i, button{
+    cursor: pointer;
+}
+
+/*HEADER*/
+header{
+    grid-column: 2/4;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0,0,0,0.9)), url(images/banner.jpg);
+    background-size: cover;
+    background-position: left ;
+    color: white;
+    height: 40em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header h1{
+    font-size: 5em;
+    margin-bottom: 0.5em;
+}
+
+header h4{
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+header button{
+    border: 1px solid rgba(211, 211, 211, 0.548);
+    border-radius: 5px;
+    color: white;
+    background-color: transparent;
+    padding: 1em;
+    padding-right: 2.5em;
+    padding-left: 2.5em;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+header button:hover{
+    background-color: rgba(211, 211, 211, 0.1);
+}
+
+/*ASIDE*/
+aside{
+    grid-column: 1/2;
+    grid-row: 1/3;
+    background: black;
+    display: flex;
+    flex-direction: column;
+}
+
+aside i{
+    color: lightgray;
+    padding: 0.2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#home{
+    color: #19B5FE;
+}
+
+/*GALERIA*/
+main{
+    grid-column: 2/2;
+}
+
+.galeria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.galeria article{
+    /*Estos tres hacen que no aparezca las líneas blancas entre las fotos*/
+    display: block;
+    line-height: 0;
+    font-size: 0;
+}
+
+.galeria h3{
+    padding: 3em;
+    font-size: 2em;
+}
+
+.galeria article div img{
+    width: 20rem;
+}
+
+.galeria img:first-child{
+    margin-left: 4em;
+}
+
+.galeria button{
+    margin-top: 3em;
+    border: 1px solid #19B5FE;
+    border-radius: 4px;
+    background-color: #19B5FE;
+    color: white;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.5em;
+    margin-bottom: 3em;
+}
+
+.galeria button:hover, .formulario button:hover{
+    background-color: #019be3; 
+}
+
+/*CONTACTO*/
+.contacto{
+    display: flex;
+    flex-direction: row;
+}
+
+.about-me{
+    padding: 3em;
+    width: 50%;
+    background-color: rgb(236,236,236);
+}
+
+.contacto h3, .contacto p{
+    /* font-weight: bolder; */
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+}
+
+.redes i{
+    color: #19B5FE;
+    margin-right: 0.5em;
+}
+
+.formulario{
+    width: 50%;
+    background-color: rgb(255, 250, 250);
+    display:flex;
+    flex-direction: column;
+    padding: 3em;
+}
+
+input, textarea{
+    border: 1px solid #19B5FE;
+    width: 41em;
+    border-radius: 5px;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.data{
+    display: flex;
+    flex-direction: row;
+}
+
+.data input{
+    width: 20em;
+    margin-right: 1em;
+}
+
+/*input:focus, textarea:focus{
+    border: 1px solid #019be3; 
+}*/
+
+.formulario li{
+    list-style: none;
+}
+
+.formulario button{
+    border: 1px solid #19B5FE;
+    border-radius: 4px;
+    background-color: #19B5FE;
+    color: white;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1em;
+}
+
+/*FOOTER*/
+footer{
+    grid-column: 2/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 10em;
+}
+
+footer p{
+    color: lightgray;
+}
+
+footer span{
+    color: #19B5FE
+}
