@@ -1,224 +1,266 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600");
-
-*,/*todos los elementos*/
-*::before, /*para asegurar que los elementos generados por CSS de forma dinámica también sigan estas reglas*/
+*,
+*::before,
 *::after {
   box-sizing: border-box; /* sin esta regla, el ancho y alto de un elemento se calcula sin tener en cuenta el relleno y el borde*/
-  margin: 0;  /* para garantizar que no haya márgenes o rellenos no deseados aplicados de forma predeterminada por el navegador*/
+  margin: 0; /* para garantizar que no haya márgenes o rellenos no deseados aplicados de forma predeterminada por el navegador*/
   padding: 0;
 }
 
-body, input, textarea {
-    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+body,
+input,
+textarea {
+  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
 }
 
-body{
-    display: grid;
-    grid-template-columns: 0.01fr 1fr;
-
-    /*grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-    "aside" "header"
-    "aside" "main"
-    "footer" "footer";*/
-    height: 100vh;
+body {
+  display: grid;
+  grid-template-columns: "0.01fr 1fr";
+  grid-template-rows: "auto 1fr auto";
+  /*grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+  "aside" "header"
+  "aside" "main"
+  "footer" "footer";*/
+  height: 100vh;
 }
 
-aside i, .contacto i, button{
-    cursor: pointer;
+aside i,
+.main__contacto i,
+button {
+  cursor: pointer;
 }
 
 /*HEADER*/
-header{
-    grid-column: 2/4;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0,0,0,0.9)), url(images/banner.jpg);
-    background-size: cover;
-    background-position: left ;
-    color: white;
-    height: 40em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+header {
+  grid-column: 2/4;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(images/banner.jpg);
+  background-size: cover;
+  background-position: left;
+  color: white;
+  min-height: 40em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-header h1{
-    font-size: 5em;
-    margin-bottom: 0.5em;
+header h1 {
+  font-size: 5em;
+  margin-bottom: 0.5em;
 }
-
-header h4{
-    font-size: 1.5em;
-    margin-bottom: 1.5em;
+header h4 {
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
 }
-
-header button{
-    border: 1px solid rgba(211, 211, 211, 0.548);
-    border-radius: 5px;
-    color: white;
-    background-color: transparent;
-    padding: 1em;
-    padding-right: 2.5em;
-    padding-left: 2.5em;
-    font-size: 1.5em;
-    font-weight: bolder;
+header button {
+  border: 1px solid rgba(211, 211, 211, 0.548);
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+  padding: 1em;
+  padding-right: 2.5em;
+  padding-left: 2.5em;
+  font-size: 1.5em;
+  font-weight: bolder;
 }
-
-header button:hover{
-    background-color: rgba(211, 211, 211, 0.1);
+header button:hover {
+  background-color: rgba(211, 211, 211, 0.1);
 }
 
 /*ASIDE*/
-aside{
-    grid-column: 1/2;
-    grid-row: 1/3;
-    background: black;
-    display: flex;
-    flex-direction: column;
+aside {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+}
+aside i {
+  color: lightgray;
+  padding: 0.2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-aside i{
-    color: lightgray;
-    padding: 0.2em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-#home{
-    color: #19B5FE;
+#home {
+  color: #19B5FE;
 }
 
 /*GALERIA*/
-main{
-    grid-column: 2/2;
+main {
+  grid-column: 2/2;
 }
 
-.galeria{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.main__galeria {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main__galeria article {
+  /*Estos tres hacen que no aparezca las líneas blancas entre las fotos*/
+  display: block;
+  line-height: 0;
+  font-size: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.main__galeria img {
+  width: 100%;
+  max-width: 20rem;
+  margin-bottom: 1em;
+}
+.main__galeria h3 {
+  padding: 3em;
+  font-size: 2em;
+}
+.main__galeria button {
+  margin-top: 3em;
+  border: 1px solid #19B5FE;
+  border-radius: 4px;
+  background-color: #19B5FE;
+  color: white;
+  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-size: 1.5em;
+  margin-bottom: 3em;
 }
 
-.galeria article{
-    /*Estos tres hacen que no aparezca las líneas blancas entre las fotos*/
-    display: block;
-    line-height: 0;
-    font-size: 0;
+.main__galeria img:first-child {
+  margin-left: 4em;
 }
 
-.galeria h3{
-    padding: 3em;
-    font-size: 2em;
-}
-
-.galeria article div img{
-    width: 20rem;
-}
-
-.galeria img:first-child{
-    margin-left: 4em;
-}
-
-.galeria button{
-    margin-top: 3em;
-    border: 1px solid #19B5FE;
-    border-radius: 4px;
-    background-color: #19B5FE;
-    color: white;
-    padding: 1em;
-    padding-left: 2em;
-    padding-right: 2em;
-    font-size: 1.5em;
-    margin-bottom: 3em;
-}
-
-.galeria button:hover, .formulario button:hover{
-    background-color: #019be3; 
+.main__galeria button:hover,
+.main__contacto__formulario button:hover {
+  background-color: #019be3;
 }
 
 /*CONTACTO*/
-.contacto{
-    display: flex;
-    flex-direction: row;
+.main__contacto {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+}
+.main__contacto h3, .main__contacto p {
+  /* font-weight: bolder; */
+  margin-top: 1em;
+  margin-bottom: 1.5em;
 }
 
-.about-me{
-    padding: 3em;
-    width: 50%;
-    background-color: rgb(236,236,236);
+.main__contacto__about {
+  padding: 3em;
+  min-width: 50%;
+  background-color: rgb(236, 236, 236);
 }
 
-.contacto h3, .contacto p{
-    /* font-weight: bolder; */
-    margin-top: 1em;
-    margin-bottom: 1.5em;
+.main__contacto__redes i {
+  color: #19B5FE;
+  margin-right: 0.5em;
 }
 
-.redes i{
-    color: #19B5FE;
-    margin-right: 0.5em;
+.main__contacto__formulario {
+  min-width: 50%;
+  background-color: rgb(255, 250, 250);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+  padding: 3em;
+}
+.main__contacto__formulario li {
+  list-style: none;
+}
+.main__contacto__formulario button {
+  border: 1px solid #19B5FE;
+  border-radius: 4px;
+  background-color: #19B5FE;
+  color: white;
+  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-size: 1em;
 }
 
-.formulario{
-    width: 50%;
-    background-color: rgb(255, 250, 250);
-    display:flex;
-    flex-direction: column;
-    padding: 3em;
+input,
+textarea {
+  border: 1px solid #19B5FE;
+  min-width: 41em;
+  border-radius: 5px;
+  padding: 1em;
+  margin-bottom: 2em;
 }
 
-input, textarea{
-    border: 1px solid #19B5FE;
-    width: 41em;
-    border-radius: 5px;
-    padding: 1em;
-    margin-bottom: 2em;
+.main__contacto__formulario__data {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
 }
-
-.data{
-    display: flex;
-    flex-direction: row;
-}
-
-.data input{
-    width: 20em;
-    margin-right: 1em;
+.main__contacto__formulario__data input {
+  min-width: 20em;
+  margin-right: 1em;
 }
 
 /*input:focus, textarea:focus{
     border: 1px solid #019be3; 
 }*/
-
-.formulario li{
-    list-style: none;
-}
-
-.formulario button{
-    border: 1px solid #19B5FE;
-    border-radius: 4px;
-    background-color: #19B5FE;
-    color: white;
-    padding: 1em;
-    padding-left: 2em;
-    padding-right: 2em;
-    font-size: 1em;
-}
-
 /*FOOTER*/
-footer{
-    grid-column: 2/2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+footer {
+  grid-column: 2/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 10em;
+}
+footer p {
+  color: lightgray;
+}
+footer span {
+  color: #19B5FE;
+}
+
+@media (max-width: 1020px) {
+  .main__galeria img {
+    max-width: 100%;
+  }
+}
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    padding: 2em;
     text-align: center;
-    height: 10em;
-}
-
-footer p{
-    color: lightgray;
-}
-
-footer span{
-    color: #19B5FE
-}
+    width: 100%;
+  }
+  header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+  }
+  header h4 {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+  }
+  header button {
+    padding: 0.8em 1.5em;
+    font-size: 0.9em;
+  }
+  .main__galeria article {
+    justify-content: center; /* Centra las imágenes */
+  }
+  .main__galeria img {
+    min-width: 50%;
+  }
+  .main__contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+  }
+}/*# sourceMappingURL=style.css.map */

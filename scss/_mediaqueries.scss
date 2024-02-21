@@ -1,0 +1,43 @@
+@media (max-width: 1020px) {
+    .main__galeria img {
+        max-width: 100%; 
+    }
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    header {
+        height: auto; 
+        padding: 2em; 
+        text-align: center; 
+        width: 100%;
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+        }
+
+        h4 {
+            font-size: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        button {
+            padding: 0.8em 1.5em;
+            font-size: 0.9em;
+        }
+    }
+
+    .main__galeria article {
+        justify-content: center; /* Centra las imágenes */
+    }
+
+    .main__galeria img {
+        min-width: 50%;
+    }
+
+    .main__contacto{
+        @include flexbox(column);
+    }
+}
+
